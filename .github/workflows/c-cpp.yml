@@ -1,0 +1,20 @@
+build_configuration_types:
+  - Debug
+  - Release
+
+build_type: Release
+
+cache_file: CMakeCache.txt
+
+compile_options:
+  - -std=c++17
+
+source_directories:
+  - src
+
+include_directories:
+  - ${UNREAL_ENGINE_SOURCE_DIR}/Engine/Source/Runtime
+
+add_executable(UnrealVR ${SOURCE_FILES})
+
+target_link_libraries(UnrealVR PRIVATE ${UNREAL_ENGINE_BINARY_DIR}/Engine/Binaries/Linux/Release/libUnrealEngine_5.so)
